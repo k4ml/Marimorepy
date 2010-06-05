@@ -1,0 +1,20 @@
+marimorepy (MARIMORE Inc python libs)
+----------------------
+A set of basic utilities, libraries and python code being used 
+by other packages in MARIMORE Inc.
+
+Project Website:
+http://code.google.com/p/marimorepy/
+
+You can get more information on installation and usage of the libraries from
+the project website above
+
+To install:
+* run "sudo python setup.py install" in the root directory
+
+This project is released under the OSI BSD license
+Please read LICENSE for more information
+
+Updates
+-----------------------
+

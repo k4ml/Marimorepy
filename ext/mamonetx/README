@@ -1,0 +1,15 @@
+
+REQUIRES
+libspf http://libspf.userfriendly.net/
+
+To install
+sudo ./setup.py install
+
+Usage:
+>>> import mamonetx
+>>> res = mamonetx.email_has_valid_spf("localhost", "192.168.1.1", "test@docomo.ne.jp")
+>>> print res (False)
+>>> res = mamonetx.email_has_valid_spf("localhost", "203.138.203.201", "test@docomo.ne.jp")
+>>> print res (True)
+
+The first parameter can always be "localhost"
