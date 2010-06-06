@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2009, MARIMORE LLC Tokyo, Japan.
+# Copyright (c) 2009, MARIMORE Inc Tokyo, Japan.
 # Contributed by 
 #       Iqbal Abdullah <iqbal@marimore.co.jp>
 # All rights reserved.
@@ -16,7 +16,7 @@
 #   *   Redistributions in binary form must reproduce the above copyright notice, 
 #       this list of conditions and the following disclaimer in the documentation 
 #       and/or other materials provided with the distribution.
-#   *   Neither the name of the MARIMORE LLC nor the names of its contributors 
+#   *   Neither the name of the MARIMORE Inc nor the names of its contributors 
 #       may be used to endorse or promote products derived from this software 
 #       without specific prior written permission.
 #
