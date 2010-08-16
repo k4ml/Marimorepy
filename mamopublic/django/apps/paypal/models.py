@@ -34,8 +34,8 @@
 These are models for Paypal billing
 """
 
-__date__        = "$LastChangedDate: 2010-01-20 10:44:33 +0900 (水, 20  1月 2010) $"
-__version__     = "$LastChangedRevision: 40 $"
+__date__        = "$LastChangedDate$"
+__version__     = "$LastChangedRevision$"
 
 from django.db import models
 

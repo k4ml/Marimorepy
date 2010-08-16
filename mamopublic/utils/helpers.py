@@ -34,8 +34,8 @@ This module defines helper functions
 """
 
 __author__      = "Iqbal Abdullah <iqbal@marimore.co.jp>"
-__date__        = "$LastChangedDate: 2009-10-12 01:36:53 +0900 (月, 12 10月 2009) $"
-__version__     = "$LastChangedRevision: 23 $"
+__date__        = "$LastChangedDate$"
+__version__     = "$LastChangedRevision$"
 
 import sys
 

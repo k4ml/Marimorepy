@@ -34,8 +34,8 @@
 These are views for Paypal IPN listener
 """
 
-__date__        = "$LastChangedDate: 2010-01-19 23:09:19 +0900 (火, 19  1月 2010) $"
-__version__     = "$LastChangedRevision: 38 $"
+__date__        = "$LastChangedDate$"
+__version__     = "$LastChangedRevision$"
 
 from django.http import HttpResponse, HttpResponseServerError
 from django.shortcuts import HttpResponse, render_to_response, get_object_or_404

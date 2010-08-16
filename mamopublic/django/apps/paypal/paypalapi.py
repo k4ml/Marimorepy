@@ -37,8 +37,8 @@ Contains classes and functions to process Paypal requests
 G{importgraph}
 """
 
-__date__        = "$LastChangedDate: 2009-09-06 18:00:28 +0900 (日, 06  9月 2009) $"
-__version__     = "$LastChangedRevision: 20 $"
+__date__        = "$LastChangedDate$"
+__version__     = "$LastChangedRevision$"
 
 from mamopublic import common
 import urllib, urllib2

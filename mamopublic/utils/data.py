@@ -34,8 +34,8 @@ This module defines various general reusable data
 """
 
 __author__      = "Iqbal Abdullah <iqbal@marimore.co.jp>"
-__date__        = "$LastChangedDate: 2009-09-05 15:21:29 +0900 (土, 05  9月 2009) $"
-__version__     = "$LastChangedRevision: 18 $"
+__date__        = "$LastChangedDate$"
+__version__     = "$LastChangedRevision$"
 
 WORLD_COUNTRIES = (
 

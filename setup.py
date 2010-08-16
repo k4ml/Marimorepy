@@ -36,8 +36,8 @@ Setup script for mamo package
 """
 
 __author__      = "Iqbal Abdullah <iqbal@marimore.co.jp>"
-__date__        = "$LastChangedDate: 2009-08-31 00:23:59 +0900 (月, 31  8月 2009) $"
-__version__     = "$LastChangedRevision: 14 $"
+__date__        = "$LastChangedDate$"
+__version__     = "$LastChangedRevision$"
 
 from distutils.core import setup
 from distutils.command.install import INSTALL_SCHEMES

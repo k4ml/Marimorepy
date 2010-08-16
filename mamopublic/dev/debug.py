@@ -34,8 +34,8 @@ Utilities used for debugging during development
 """
 
 __author__      = "Iqbal Abdullah <iqbal@marimore.co.jp>"
-__date__        = "$LastChangedDate: 2010-01-02 18:09:02 +0900 (土, 02  1月 2010) $"
-__version__     = "$LastChangedRevision: 30 $"
+__date__        = "$LastChangedDate$"
+__version__     = "$LastChangedRevision$"
 
 import datetime, tempfile
 

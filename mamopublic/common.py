@@ -34,8 +34,8 @@ This module defines commonly used code for the mamo package
 """
 
 __author__      = "Iqbal Abdullah <iqbal@marimore.co.jp>"
-__date__        = "$LastChangedDate: 2009-08-30 23:58:38 +0900 (日, 30  8月 2009) $"
-__version__     = "$LastChangedRevision: 12 $"
+__date__        = "$LastChangedDate$"
+__version__     = "$LastChangedRevision$"
 
 import re
 

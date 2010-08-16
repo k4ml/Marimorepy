@@ -34,8 +34,8 @@ This module defines commonly used utility code for working with files
 """
 
 __author__      = "Iqbal Abdullah <iqbal@marimore.co.jp>"
-__date__        = "$LastChangedDate: 2009-08-31 12:07:58 +0900 (月, 31  8月 2009) $"
-__version__     = "$LastChangedRevision: 16 $"
+__date__        = "$LastChangedDate$"
+__version__     = "$LastChangedRevision$"
 
 import random
 import time
