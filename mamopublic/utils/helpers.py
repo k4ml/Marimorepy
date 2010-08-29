@@ -169,6 +169,46 @@ def log_syslog(ident, message, priority="LOG_NOTICE", facility="LOG_USER"):
     syslog.openlog(ident, 0, fac)
     syslog.syslog(prio, message)
 
+
+def uniqify_list(seq, idfun=None): 
+    """
+    Uniqify a list while preserving order. i.e
+
+    If you have a list such as [1,2,2,2,3,4,5,6,6,6,6] uniqify_list() while 
+    return [1,2,3,4,5,6]
+
+    You can also specify a function to transform the data, i.e
+
+    >>> a=list('ABeeE')
+    >>> uniqify_list(a)
+    ['A','B','e','E']
+    >>> uniqify_list(a, lambda x: x.lower())
+    ['A','B','e'] 
+
+    Taken from http://www.peterbe.com/plog/uniqifiers-benchmark
+
+    @type seq: list
+    @param seq: The list which you want to uniqify 
+    @type idfun: a function, defaults to None
+    @param idfun: A function which you want to process the data with
+    @rtype: list
+    @return: An list which has been uniqified
+    """
+
+    if idfun is None:
+        def idfun(x): return x
+
+    seen = {}
+    result = []
+    for item in seq:
+        marker = idfun(item)
+        if marker in seen: continue
+        seen[marker] = 1
+        result.append(item)
+
+    return result
+
 if __name__ == '__main__':
     log_syslog("test", "test test")
-    import_object('test')
+    #import_object('test')
+    print uniqify_list(list('123123454324332ABCAABCabcaabcrt'))
