@@ -64,7 +64,7 @@ def import_object(qualified_name):
         mod = getattr(m, target_namespace)
         return mod
 
-    except Exception, e:
+    except (Exception) as e:
         print "Exception occurred 02: import_object(): %s" % (e)
         return None
 
