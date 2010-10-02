@@ -47,7 +47,7 @@ class BaseClass(object):
     """
 
     def read_only_property(self):
-        raise AttributeError, "Read-only attribute"
+        raise (AttributeError), "Read-only attribute"
 
     def _prop_set_classname(self, value):
         self.read_only_property()
