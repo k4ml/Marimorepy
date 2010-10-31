@@ -208,7 +208,7 @@ def uniqify_list(seq, idfun=None):
 
     return result
 
-def calculate_time(base_time, diff_seconds): 
+def calculate_time(base_time, diff_seconds, reverse=False): 
     """
     Calculates a new time if you add diff_seconds to base_time
 
@@ -216,12 +216,19 @@ def calculate_time(base_time, diff_seconds):
     @param base_time: The base time which you want to do the calculation on
     @type diff_seconds: signed int
     @param diff_seconds: The time difference in seconds. Use a negative value if the time is in the past
+    @type reverse: bool
+    @param reverse: Reverse calculation; Instead of adding diff_seconds to base_time, you do deduction.
+                    This is useful in cases where you have the localtime and the delta but you want to
+                    find the UTC.
     @rtype: datetime object
     @return: A datetime object representing the calculated time
     """
 
     diff_time = datetime.timedelta(seconds=diff_seconds)
-    new_time = base_time + diff_time
+    if reverse:
+        new_time = base_time - diff_time
+    else:
+        new_time = base_time + diff_time
     return new_time
 
 if __name__ == '__main__':
@@ -229,3 +236,4 @@ if __name__ == '__main__':
     #import_object('test')
     print uniqify_list(list('123123454324332ABCAABCabcaabcrt'))
     print calculate_time(datetime.datetime.now(), -60)
+    print calculate_time(datetime.datetime.now(), -60, True)
