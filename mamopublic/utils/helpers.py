@@ -38,6 +38,7 @@ __date__        = "$LastChangedDate$"
 __version__     = "$LastChangedRevision$"
 
 import sys, datetime
+import inspect
 
 def import_object(qualified_name):
     """
@@ -169,6 +170,38 @@ def log_syslog(ident, message, priority="LOG_NOTICE", facility="LOG_USER"):
     syslog.openlog(ident, 0, fac)
     syslog.syslog(prio, message)
 
+def log_syslogn(message, ident=None, priority="LOG_NOTICE", facility="LOG_USER"):
+    """
+    Shortcut to log to LOCALn. The function signature should be similar to log_syslog
+    except that message is swapped to be the first so indent would be optional.
+    If indent is None, use inspect module to get the calling function name.
+    """
+
+    if not ident:
+        frame = None
+        frame_info = None
+        try:
+            frame = inspect.stack()[2]
+            frame_info = inspect.getframeinfo(frame[0])
+            mod = inspect.getmodule(frame[0])
+            filename, lineno, function, code_context, index = frame_info
+            ident = '%s.%s()' % (mod.__name__, function.strip())
+        except Exception:
+            ident = ''
+        finally:
+            del frame
+            del frame_info
+
+    log_syslog(ident, message, priority, facility=facility) 
+
+def log_syslog0(message, ident=None, priority="LOG_NOTICE", facility="LOG_LOCAL0"):
+    log_syslogn(message, ident, priority, facility=facility) 
+
+def log_syslog1(message, ident=None, priority="LOG_NOTICE", facility="LOG_LOCAL1"):
+    log_syslogn(message, ident, priority, facility=facility) 
+
+def log_syslog2(message, ident=None, priority="LOG_NOTICE", facility="LOG_LOCAL2"):
+    log_syslogn(message, ident, priority, facility=facility) 
 
 def uniqify_list(seq, idfun=None): 
     """
