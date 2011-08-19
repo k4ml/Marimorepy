@@ -176,16 +176,31 @@ def log_syslogn(message, ident=None, priority="LOG_NOTICE", facility="LOG_USER")
     except that message is swapped to be the first so indent would be optional.
     If indent is None, use inspect module to get the calling function name.
     """
+    def get_ident(frame):
+        frame_info = inspect.getframeinfo(frame[0])
+
+        if 'self' in frame[0].f_locals:
+            instance = frame[0].f_locals['self']
+        else:
+            instance = None
+
+        mod = inspect.getmodule(frame[0])
+        filename, lineno, function, code_context, index = frame_info
+
+        if instance:
+            ident = '%s.%s.%s()' % (mod.__name__, instance.__class__.__name__,
+                                    function.strip())
+        else:
+            ident = '%s.%s()' % (mod.__name__, function.strip())
+
+        return ident
 
     if not ident:
         frame = None
         frame_info = None
         try:
             frame = inspect.stack()[2]
-            frame_info = inspect.getframeinfo(frame[0])
-            mod = inspect.getmodule(frame[0])
-            filename, lineno, function, code_context, index = frame_info
-            ident = '%s.%s()' % (mod.__name__, function.strip())
+            ident = get_ident(frame)
         except Exception:
             ident = ''
         finally:
