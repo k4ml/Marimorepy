@@ -223,6 +223,12 @@ def log_syslog1(message, ident=None, priority="LOG_NOTICE", facility="LOG_LOCAL1
 def log_syslog2(message, ident=None, priority="LOG_NOTICE", facility="LOG_LOCAL2"):
     log_syslogn(message, ident, priority, facility=facility) 
 
+def log_syslog3(message, ident=None, priority="LOG_NOTICE", facility="LOG_LOCAL3"):
+    log_syslogn(message, ident, priority, facility=facility) 
+
+def log_syslog4(message, ident=None, priority="LOG_NOTICE", facility="LOG_LOCAL4"):
+    log_syslogn(message, ident, priority, facility=facility) 
+
 def uniqify_list(seq, idfun=None): 
     """
     Uniqify a list while preserving order. i.e
