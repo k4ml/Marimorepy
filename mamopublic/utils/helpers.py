@@ -207,7 +207,12 @@ def log_syslogn(message, ident=None, priority="LOG_NOTICE", facility="LOG_USER")
             del frame
             del frame_info
 
-    log_syslog(ident, message, priority, facility=facility) 
+    # split message by newline and then joining it back, removing any tabs or
+    # space that resulted from indentation. Log message always in single line.
+    messages = [line.strip() for line in message.split()]
+    message1 = " ".join(messages)
+
+    log_syslog(ident, message1, priority, facility=facility) 
 
 def log_syslog0(message, ident=None, priority="LOG_NOTICE", facility="LOG_LOCAL0"):
     log_syslogn(message, ident, priority, facility=facility) 
