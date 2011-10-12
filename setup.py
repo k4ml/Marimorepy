@@ -82,7 +82,7 @@ for dirpath, dirnames, filenames in os.walk(mamo_dir):
 
 setup (
         name='marimorepy_public',
-        version='1.6',
+        version='1.7',
         description='MAMO Libraries',
         long_description='Common libraries being used in python packages for MARIMORE',
         author='Iqbal Abdullah',
