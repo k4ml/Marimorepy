@@ -191,7 +191,11 @@ def log_syslogn(message, ident=None, priority="LOG_NOTICE", facility="LOG_USER")
             ident = '%s.%s.%s()' % (mod.__name__, instance.__class__.__name__,
                                     function.strip())
         else:
-            ident = '%s.%s()' % (mod.__name__, function.strip())
+            if mod.__name__ == '__main__':
+                modname = filename
+            else:
+                modname = mod.__name__
+            ident = '%s.%s()' % (modname, function.strip())
 
         return ident
 
